@@ -5,66 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daily Affirmation</title>
   <style>
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-background: linear-gradient(135deg, #FDA4BA 0%, #FFF1F5 100%);
-  color: white;
-  text-align: center;
-  padding: 2rem;
-}
-h1 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-  color: #7A2E3A;
-}
-#fact-container {
-  max-width: 800px;
-  font-size: 2rem;
-  background: white;
-  color: #333;
-  padding: 2rem;
-  border-radius: 20px;
-box-shadow: 0 20px 60px rgba(122, 46, 58, 0.25);
-}
-.tiny-heart {
-  width: 10px;
-  height: 10px;
-  background: #FC9483;
-margin: 8px auto 24px;
-  transform: rotate(45deg);
-  position: relative;
-}
-.tiny-heart::before,
-.tiny-heart::after {
-  content: "";
-  width: 8px;
-  height: 8px;
-  background: #FC9483;
-  border-radius: 50%;
-  position: absolute;
-}
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #FDA4BA 0%, #FFF1F5 100%);
+      text-align: center;
+      padding: 2rem;
+    }
 
-.tiny-heart::before {
-  top: -4px;
-  left: 0;
-}
+    h1 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      margin: 0;
+      color: #7A2E3A;
+    }
 
-.tiny-heart::after {
-  left: -4px;
-  top: 0;
-}
+    .tiny-heart {
+      width: 10px;
+      height: 10px;
+      background: #FC9483;
+      margin: 10px auto 22px;
+      transform: rotate(45deg);
+      position: relative;
+    }
+    .tiny-heart::before,
+    .tiny-heart::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: #FC9483;
+      border-radius: 50%;
+      position: absolute;
+    }
+    .tiny-heart::before {
+      top: -5px;
+      left: 0;
+    }
+    .tiny-heart::after {
+      left: -5px;
+      top: 0;
+    }
+
+    #fact-container {
+      width: min(820px, 92vw);
+      font-size: clamp(1.2rem, 2.6vw, 2rem);
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      padding: 1.6rem 1.8rem;
+      border-radius: 22px;
+      box-shadow: 0 20px 60px rgba(122, 46, 58, 0.25);
+      line-height: 1.35;
+    }
   </style>
 </head>
 <body>
-<h1>Daily Affirmation</h1>
-<div class="tiny-heart"></div>
+  <h1>Daily Affirmation</h1>
+  <div class="tiny-heart"></div>
   <div id="fact-container">Loading today's affirmation...</div>
 
   <script>
