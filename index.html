@@ -37,15 +37,19 @@ h1::after {
   position: relative;
   display: inline-block;
 }
+.heart-i {
+  position: relative;
+  display: inline-block;
+}
+
 .heart-i::after {
   content: "❤";
   position: absolute;
-  top: -12px;
+  top: -6px;       /* lowered from -12px */
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   color: #FC9483;
-  line-height: 1;
 }
 #fact-container {
   max-width: 800px;
