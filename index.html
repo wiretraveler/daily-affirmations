@@ -33,6 +33,20 @@ h1::after {
   margin: 12px auto 0;
   border-radius: 2px;
 }
+    .heart-i {
+  position: relative;
+  display: inline-block;
+}
+.heart-i::after {
+  content: "❤";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.6rem;
+  color: #FC9483;
+  line-height: 1;
+}
 #fact-container {
   max-width: 800px;
   font-size: 2rem;
@@ -47,7 +61,7 @@ h1::after {
   </style>
 </head>
 <body>
-  <h1>Daily Affirmation</h1>
+<h1>Daily Affirmat<span class="heart-i">i</span>on</h1>
   <div id="fact-container">Loading today's affirmation...</div>
 
   <script>
