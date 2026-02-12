@@ -18,12 +18,21 @@ body {
   text-align: center;
   padding: 2rem;
 }
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 2rem;
-      color: white;
-    }
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #7A2E3A;
+}
+h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #7A2E3A;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
 #fact-container {
   max-width: 800px;
   font-size: 2rem;
@@ -32,6 +41,7 @@ body {
   padding: 2rem;
   border-radius: 20px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 40px rgba(122, 46, 58, 0.25);
 }
 
   </style>
