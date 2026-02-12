@@ -33,24 +33,6 @@ h1::after {
   margin: 12px auto 0;
   border-radius: 2px;
 }
-    .heart-i {
-  position: relative;
-  display: inline-block;
-}
-.heart-i {
-  position: relative;
-  display: inline-block;
-}
-
-.heart-i::after {
-  content: "❤";
-  position: absolute;
-  top: -6px;       /* lowered from -12px */
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.7rem;
-  color: #FC9483;
-}
 #fact-container {
   max-width: 800px;
   font-size: 2rem;
@@ -61,11 +43,39 @@ h1::after {
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
   box-shadow: 0 15px 40px rgba(122, 46, 58, 0.25);
 }
+.tiny-heart {
+  width: 8px;
+  height: 8px;
+  background: #FC9483;
+  margin: -10px auto 16px;
+  transform: rotate(45deg);
+  position: relative;
+}
 
+.tiny-heart::before,
+.tiny-heart::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #FC9483;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.tiny-heart::before {
+  top: -4px;
+  left: 0;
+}
+
+.tiny-heart::after {
+  left: -4px;
+  top: 0;
+}
   </style>
 </head>
 <body>
-<h1>Daily Affirmat<span class="heart-i">i</span>on</h1>
+<h1>Daily Affirmation</h1>
+<div class="tiny-heart"></div>
   <div id="fact-container">Loading today's affirmation...</div>
 
   <script>
