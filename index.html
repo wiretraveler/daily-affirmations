@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Affirmation</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #FDA4BA;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: white;
+    }
+    #fact-container {
+      max-width: 800px;
+      font-size: 2rem;
+      background: white;
+      color: #333;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Daily Affirmation</h1>
+  <div id="fact-container">Loading today's affirmation...</div>
+
+  <script>
+    const facts = [
+      "affirmation 1",
+      "affirmation 2"
+    ];
+
+    function getFactIndex() {
+      const now = new Date();
+      const day = now.getFullYear() * 1000 + now.getMonth() * 100 + now.getDate();
+      return day % facts.length;
+    }
+
+    document.getElementById("fact-container").innerText = facts[getFactIndex()];
+  </script>
+</body>
+</html>
