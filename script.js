@@ -18,7 +18,28 @@ async function loadAffirmation() {
     const response = await fetch("affirmations.json");
     const affirmations = await response.json();
 
+    const specialResponse = await fetch("specialDates.json");
+    const specialDates = await specialResponse.json();
+
     const now = new Date();
+
+    const dateKey =
+        `${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+
+    if (specialDates[dateKey]) {
+
+        todaysAffirmation = specialDates[dateKey].text;
+
+        updateGreeting();
+
+        document.getElementById("focus").textContent =
+            specialDates[dateKey].category;
+
+        document.getElementById("affirmation-text").textContent =
+            specialDates[dateKey].text;
+
+        return;
+    }
 
     const day =
         now.getFullYear() * 1000 +
