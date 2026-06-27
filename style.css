@@ -169,6 +169,20 @@ h1 {
 
 }
 
+#today {
+
+    margin: .35rem 0 1.25rem;
+
+    color: #9C879E;
+
+    font-size: 1rem;
+
+    font-weight: 500;
+
+    letter-spacing: .03em;
+
+}
+
 /* ---------- Mobile ---------- */
 
 @media (max-width: 600px) {
