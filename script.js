@@ -54,11 +54,12 @@ async function loadAffirmation() {
 
     updateGreeting();
 
-    const today = affirmations[getAffirmationIndex()];
+const today = affirmations[getAffirmationIndex()];
 
-    document.getElementById("affirmation-text").textContent =
-        today.text;
+document.getElementById("focus").textContent =
+    today.category;
 
-}
+document.getElementById("affirmation-text").textContent =
+    today.text;
 
 loadAffirmation();
