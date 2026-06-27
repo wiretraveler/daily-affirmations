@@ -1,6 +1,16 @@
 let heartTaps = 0;
 let loveShownToday = false;
 let todaysAffirmation = "";
+const loveNotes = [
+    "I love you. ❤️",
+    "I'm so proud of you. ❤️",
+    "You make every day brighter. ❤️",
+    "You are my favorite person. ❤️",
+    "You make my heart happy. ❤️",
+    "Thinking about you. ❤️",
+    "I'm always on your side. ❤️",
+    "You mean the world to me. ❤️"
+];
 
 async function loadAffirmation() {
 
@@ -70,45 +80,61 @@ document.getElementById("affirmation-text").textContent =
 }
 
 loadAffirmation();
-
 const heart = document.querySelector(".heart-icon");
+const affirmation = document.getElementById("affirmation-text");
 
-heart.addEventListener("click", () => {
+let holdTimer;
 
-    if (loveShownToday) return;
+heart.addEventListener("pointerdown", () => {
 
-    heartTaps++;
+    holdTimer = setTimeout(() => {
 
-    if (heartTaps < 7) return;
-
-    loveShownToday = true;
-
-    const affirmation =
-        document.getElementById("affirmation-text");
-
-    affirmation.style.opacity = 0;
-
-    setTimeout(() => {
-
-        affirmation.innerHTML =
-            "I love you. ❤️<br><span style='font-size:.9rem;'>— Adam</span>";
-
-        affirmation.style.opacity = 1;
-
-    }, 250);
-
-    setTimeout(() => {
+        const note =
+            loveNotes[Math.floor(Math.random() * loveNotes.length)];
 
         affirmation.style.opacity = 0;
 
-    }, 4750);
+        setTimeout(() => {
 
-    setTimeout(() => {
+            affirmation.innerHTML =
+                `${note}<br><span style="font-size:.9rem;">— Adam</span>`;
 
-        affirmation.innerText = todaysAffirmation;
+            affirmation.style.opacity = 1;
 
-        affirmation.style.opacity = 1;
+        }, 250);
 
-    }, 5000);
+        setTimeout(() => {
+
+            affirmation.style.opacity = 0;
+
+        }, 4750);
+
+        setTimeout(() => {
+
+            affirmation.textContent = todaysAffirmation;
+
+            affirmation.style.opacity = 1;
+
+        }, 5000);
+
+    }, 2000);
+
+});
+
+heart.addEventListener("pointerup", () => {
+
+    clearTimeout(holdTimer);
+
+});
+
+heart.addEventListener("pointerleave", () => {
+
+    clearTimeout(holdTimer);
+
+});
+
+heart.addEventListener("pointercancel", () => {
+
+    clearTimeout(holdTimer);
 
 });
