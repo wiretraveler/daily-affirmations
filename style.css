@@ -2,7 +2,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100svh;
+  min-height: 100dvh;
   margin: 0;
   flex: 1;
   font-family: "Poppins", sans-serif;
@@ -15,7 +15,7 @@ background: linear-gradient(
 );
 
   text-align: center;
-  padding: 5rem 1.5rem;
+  padding: 1.5rem;
 }
 
 h1 {
@@ -60,7 +60,7 @@ h1 {
     max-width: 640px;
     width: min(82vw, 640px);
 
-    padding: 2.75rem;
+    padding: 2rem;
 
     border-radius: 36px;
 
@@ -73,7 +73,7 @@ h1 {
 
     color: #4B4257;
 
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
     font-weight: 500;
     line-height: 1.7;
 
@@ -135,6 +135,6 @@ h1 {
 
     align-items: center;
 
-    gap: 1.25rem;
+    gap: .75rem;
 
 }
