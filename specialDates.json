@@ -1,6 +1,14 @@
 {
   "12-25": {
-    "category": "Christmas",
+    "category": "Christmas Day",
     "text": "Merry Christmas. I hope today feels warm, peaceful, and full of little moments that make you smile."
+  },
+  "03-20": {
+    "category": "Your Birthday",
+    "text": "I hope today reminds you how loved, celebrated, and appreciated you are. Thank you for being exactly who you are—you make my life brighter every single day."
+  },
+  "07-31": {
+    "category": "One Year",
+    "text": "Every day with you is my favorite part of life. Thank you for choosing us, and for making ordinary days feel extraordinary. I love you."
   }
 }
