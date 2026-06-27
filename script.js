@@ -3,14 +3,23 @@ let todaysAffirmation = "";
 const loveNotes = [
     "I love you. ❤️",
     "I'm so proud of you. ❤️",
-    "You make every day brighter. ❤️",
+    "You make life brighter. ❤️",
     "You are my favorite person. ❤️",
     "You make my heart happy. ❤️",
-    "Thinking about you. ❤️",
+    "Just thinking about you. ❤️",
     "🥒",
     "Porter loves you. ❤️",
     "I'm always on your side. ❤️",
-    "You mean the world to me. ❤️"
+    "You mean the world to me. ❤️",
+    "Hey, beautiful. ❤️",
+    "I still have a crush on you. ❤️",
+    "Hope you're having a good day.",
+    "This is your reminder to smile. 😊",
+    "That ass!",
+    "You've got this. ❤️",
+    "Miss you. ❤️",
+    "You've been on my mind today. ❤️",
+    "I can't wait to see you. ❤️"
 ];
 
 async function loadAffirmation() {
