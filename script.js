@@ -1,3 +1,7 @@
+let heartTaps = 0;
+let loveShownToday = false;
+let todaysAffirmation = "";
+
 async function loadAffirmation() {
 
     const response = await fetch("affirmations.json");
@@ -55,6 +59,7 @@ async function loadAffirmation() {
     updateGreeting();
 
 const today = affirmations[getAffirmationIndex()];
+todaysAffirmation = today.text;
 
 document.getElementById("focus").textContent =
     today.category;
@@ -65,3 +70,45 @@ document.getElementById("affirmation-text").textContent =
 }
 
 loadAffirmation();
+
+const heart = document.querySelector(".heart-icon");
+
+heart.addEventListener("click", () => {
+
+    if (loveShownToday) return;
+
+    heartTaps++;
+
+    if (heartTaps < 7) return;
+
+    loveShownToday = true;
+
+    const affirmation =
+        document.getElementById("affirmation-text");
+
+    affirmation.style.opacity = 0;
+
+    setTimeout(() => {
+
+        affirmation.innerHTML =
+            "I love you. ❤️<br><span style='font-size:.9rem;'>— Adam</span>";
+
+        affirmation.style.opacity = 1;
+
+    }, 250);
+
+    setTimeout(() => {
+
+        affirmation.style.opacity = 0;
+
+    }, 4750);
+
+    setTimeout(() => {
+
+        affirmation.innerText = todaysAffirmation;
+
+        affirmation.style.opacity = 1;
+
+    }, 5000);
+
+});
