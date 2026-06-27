@@ -56,7 +56,7 @@ async function loadAffirmation() {
 
     const today = affirmations[getAffirmationIndex()];
 
-    document.getElementById("fact-container").textContent =
+    document.getElementById("affirmation-text").textContent =
         today.text;
 
 }
