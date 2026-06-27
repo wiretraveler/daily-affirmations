@@ -138,4 +138,35 @@ const facts = [
       return day % facts.length;
     }
 
+function updateGreeting() {
+
+    const now = new Date();
+    const hour = now.getHours();
+
+    let greeting;
+
+    if (hour >= 5 && hour < 12) {
+        greeting = "Good Morning";
+    } else if (hour >= 12 && hour < 17) {
+        greeting = "Good Afternoon";
+    } else if (hour >= 17 && hour < 21) {
+        greeting = "Good Evening";
+    } else {
+        greeting = "Good Night";
+    }
+
+    document.getElementById("greeting").textContent = greeting;
+
+    const options = {
+        weekday: "long",
+        month: "long",
+        day: "numeric"
+    };
+
+    document.getElementById("today").textContent =
+        now.toLocaleDateString("en-US", options);
+
+}
+    updateGreeting();
+
     document.getElementById("fact-container").innerText = facts[getFactIndex()];
