@@ -23,8 +23,7 @@ async function loadAffirmation() {
 
     const now = new Date();
 
-    const dateKey =
-        `${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+    const dateKey = "12-25";
 
     if (specialDates[dateKey]) {
 
