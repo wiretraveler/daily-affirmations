@@ -14,6 +14,7 @@ const loveNotes = [
 ];
 
 async function loadAffirmation() {
+
     const response = await fetch("affirmations.json");
     const affirmations = await response.json();
 
@@ -32,29 +33,39 @@ async function loadAffirmation() {
 
     document.getElementById("focus").textContent = today.category;
     document.getElementById("affirmation-text").textContent = today.text;
+
 }
 
 function updateGreeting() {
+
     const now = new Date();
     const hour = now.getHours();
 
     let greeting;
 
     if (hour >= 5 && hour < 12) {
+
         greeting = "Good Morning";
+
     } else if (hour >= 12 && hour < 17) {
+
         greeting = "Good Afternoon";
+
     } else if (hour >= 17 && hour < 21) {
+
         greeting = "Good Evening";
+
     } else {
+
         const nightGreetings = [
             "Sweet dreams ❤️",
-            "Good Night",
-            "Sleep well ❤️",
+            "Good Night ❤️",
+            "Sleep well ❤️"
         ];
 
         greeting =
             nightGreetings[Math.floor(Math.random() * nightGreetings.length)];
+
     }
 
     document.getElementById("greeting").textContent = greeting;
@@ -65,44 +76,62 @@ function updateGreeting() {
             month: "long",
             day: "numeric"
         });
+
 }
 
 function setupSecretLoveNote() {
+
     const card = document.getElementById("fact-container");
     const affirmation = document.getElementById("affirmation-text");
 
-    let holdTimer;
+    let tapCount = 0;
+    let tapTimer;
 
-    card.addEventListener("pointerdown", () => {
-        holdTimer = setTimeout(() => {
-            const note =
-                loveNotes[Math.floor(Math.random() * loveNotes.length)];
+    card.addEventListener("click", () => {
+
+        tapCount++;
+
+        clearTimeout(tapTimer);
+
+        tapTimer = setTimeout(() => {
+
+            tapCount = 0;
+
+        }, 5000);
+
+        if (tapCount < 5) return;
+
+        tapCount = 0;
+
+        const note =
+            loveNotes[Math.floor(Math.random() * loveNotes.length)];
+
+        affirmation.style.opacity = 0;
+
+        setTimeout(() => {
+
+            affirmation.textContent = note;
+
+            affirmation.style.opacity = 1;
+
+        }, 250);
+
+        setTimeout(() => {
 
             affirmation.style.opacity = 0;
 
-            setTimeout(() => {
-                affirmation.innerHTML =
-                    `${note}<br><span style="font-size:.9rem;">— Adam</span>`;
+        }, 4750);
 
-                affirmation.style.opacity = 1;
-            }, 250);
+        setTimeout(() => {
 
-            setTimeout(() => {
-                affirmation.style.opacity = 0;
-            }, 4750);
+            affirmation.textContent = todaysAffirmation;
 
-            setTimeout(() => {
-                affirmation.textContent = todaysAffirmation;
-                affirmation.style.opacity = 1;
-            }, 5000);
-        }, 2000);
+            affirmation.style.opacity = 1;
+
+        }, 5000);
+
     });
 
-    ["pointerup", "pointerleave", "pointercancel"].forEach((event) => {
-        card.addEventListener(event, () => {
-            clearTimeout(holdTimer);
-        });
-    });
 }
 
 loadAffirmation();
