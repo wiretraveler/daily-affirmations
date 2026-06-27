@@ -24,16 +24,19 @@ body {
 /* ---------- Main Content ---------- */
 
 .content {
+
     display: flex;
     flex-direction: column;
     align-items: center;
 
     width: 100%;
+
 }
 
-/* ---------- Title ---------- */
+/* ---------- Greeting ---------- */
 
 h1 {
+
     margin: 0;
 
     font-size: clamp(2rem, 6vw, 3rem);
@@ -43,56 +46,28 @@ h1 {
     color: #8A6485;
 
     letter-spacing: -.02em;
-}
-
-/* ---------- Heart ---------- */
-
-.tiny-heart {
-
-    width: 18px;
-    height: 18px;
-
-    background: #E0A075;
-
-    margin: 18px 0 26px;
-
-    transform: rotate(45deg);
-
-    position: relative;
-}
-
-.tiny-heart::before,
-.tiny-heart::after {
-
-    content: "";
-
-    width: 18px;
-    height: 18px;
-
-    background: #E0A075;
-
-    border-radius: 50%;
-
-    position: absolute;
-}
-
-.tiny-heart::before {
-
-    top: -9px;
-    left: 0;
 
 }
 
-.tiny-heart::after {
+#today {
 
-    top: 0;
-    left: -9px;
+    margin: .35rem 0 1.25rem;
+
+    color: #9C879E;
+
+    font-size: 1rem;
+
+    font-weight: 500;
+
+    letter-spacing: .03em;
 
 }
+
+/* ---------- Today's Focus ---------- */
 
 .focus-label {
 
-    margin-top: .75rem;
+    margin-top: .5rem;
 
     font-size: .9rem;
 
@@ -105,9 +80,9 @@ h1 {
 #focus {
 
     margin-top: .2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
 
-    font-size: 1.15rem;
+    font-size: 1.2rem;
 
     font-weight: 600;
 
@@ -145,6 +120,59 @@ h1 {
         inset 0 1px 0 rgba(255,255,255,.85);
 
     animation: floatCard 8s ease-in-out infinite;
+
+}
+
+/* ---------- Heart ---------- */
+
+.tiny-heart {
+
+    width: 14px;
+    height: 14px;
+
+    margin: 0 auto;
+
+    background: #E0A075;
+
+    transform: rotate(45deg);
+
+    position: relative;
+
+}
+
+.tiny-heart::before,
+.tiny-heart::after {
+
+    content: "";
+
+    width: 14px;
+    height: 14px;
+
+    background: #E0A075;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+}
+
+.tiny-heart::before {
+
+    top: -7px;
+    left: 0;
+
+}
+
+.tiny-heart::after {
+
+    top: 0;
+    left: -7px;
+
+}
+
+#affirmation-text {
+
+    margin-top: 1.4rem;
 
 }
 
@@ -191,20 +219,6 @@ h1 {
         transform: translateY(-6px);
 
     }
-
-}
-
-#today {
-
-    margin: .35rem 0 1.25rem;
-
-    color: #9C879E;
-
-    font-size: 1rem;
-
-    font-weight: 500;
-
-    letter-spacing: .03em;
 
 }
 
