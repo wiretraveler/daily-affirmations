@@ -115,3 +115,27 @@ h1 {
     }
 
 }
+
+.footer-card {
+    margin-top: auto;
+    margin-bottom: 1.5rem;
+
+    padding: .75rem 1.5rem;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,.14);
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    color: #8A6485;
+
+    font-size: .9rem;
+    font-weight: 500;
+
+    box-shadow:
+        0 10px 25px rgba(75,66,87,.08);
+}
