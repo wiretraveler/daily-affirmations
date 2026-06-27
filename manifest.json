@@ -1,0 +1,15 @@
+{
+  "name": "Daily Affirmations",
+  "short_name": "Affirmations",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#F3EBE3",
+  "theme_color": "#8A6485",
+  "icons": [
+    {
+      "src": "icons/app-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
