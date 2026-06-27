@@ -62,4 +62,6 @@ document.getElementById("focus").textContent =
 document.getElementById("affirmation-text").textContent =
     today.text;
 
+}
+
 loadAffirmation();
