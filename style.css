@@ -6,7 +6,9 @@ body {
   min-height: 100svh;
   margin: 0;
   font-family: "Poppins", sans-serif;
-background: linear-gradient(135deg, #451F55 0%, #724E91 100%);
+  background: linear-gradient(-45deg, #451F55, #724E91, #A663CC, #355C7D);
+  background-size: 400% 400%;
+  animation: gradient 20s ease infinite;
   text-align: center;
   padding: 3.5rem 1.25rem;
 }
