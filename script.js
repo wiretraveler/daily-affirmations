@@ -1,4 +1,3 @@
-  <script>
 const facts = [
 "You are enough exactly as you are.",
 "You bring light into every room you enter.",
@@ -140,4 +139,3 @@ const facts = [
     }
 
     document.getElementById("fact-container").innerText = facts[getFactIndex()];
-  </script>
