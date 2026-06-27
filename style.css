@@ -1,146 +1,196 @@
 body {
     margin: 0;
-
     min-height: 100dvh;
 
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    grid-template-rows: 1fr auto;
+    padding: 2rem 1.5rem;
 
     font-family: "Poppins", sans-serif;
-
-    background: linear-gradient(
-        -45deg,
-        #F3EBE3,
-        #EFD6BE,
-        #D2C5E4,
-        #D7E8EB
-    );
-
     text-align: center;
 
-    overflow: hidden;
+    background: linear-gradient(
+        135deg,
+        #F3EBE3 0%,
+        #EFD6BE 35%,
+        #D2C5E4 70%,
+        #D7E8EB 100%
+    );
 }
 
-  text-align: center;
-  padding: 1.5rem;
+/* ---------- Main Content ---------- */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
 }
+
+/* ---------- Title ---------- */
 
 h1 {
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    font-weight: 600;
-    margin-bottom: .25rem;
+    margin: 0;
+
+    font-size: clamp(2rem, 6vw, 3rem);
+
+    font-weight: 700;
+
     color: #8A6485;
-    letter-spacing: .02em;
+
+    letter-spacing: -.02em;
 }
 
+/* ---------- Heart ---------- */
+
 .tiny-heart {
-  width: 14px;
-  height: 14px;
-  background: #E0A075;
-  margin: 12px auto 32px;
-  transform: rotate(45deg);
-  position: relative;
+
+    width: 18px;
+    height: 18px;
+
+    background: #E0A075;
+
+    margin: 18px 0 26px;
+
+    transform: rotate(45deg);
+
+    position: relative;
 }
 
 .tiny-heart::before,
 .tiny-heart::after {
-  content: "";
-  width: 14px;
-  height: 14px;
-  background: #E0A075;
-  border-radius: 50%;
-  position: absolute;
+
+    content: "";
+
+    width: 18px;
+    height: 18px;
+
+    background: #E0A075;
+
+    border-radius: 50%;
+
+    position: absolute;
 }
 
 .tiny-heart::before {
-  top: -7px;
-  left: 0;
+
+    top: -9px;
+    left: 0;
+
 }
 
 .tiny-heart::after {
-  left: -7px;
-  top: 0;
+
+    top: 0;
+    left: -9px;
+
 }
+
+/* ---------- Card ---------- */
 
 #fact-container {
 
-    max-width: 640px;
-    width: min(82vw, 640px);
+    width: min(88vw, 620px);
 
-    padding: 1.6rem;
+    padding: 2rem;
 
-    border-radius: 36px;
+    border-radius: 34px;
 
     background: rgba(255,255,255,.62);
 
-    border: 1px solid rgba(255,255,255,.75);
+    border: 1px solid rgba(255,255,255,.72);
 
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
     color: #4B4257;
 
-    font-size: clamp(1.4rem, 4vw, 1.8rem);
+    font-size: clamp(1.45rem,4vw,1.8rem);
+
+    line-height: 1.6;
+
     font-weight: 500;
-    line-height: 1.7;
 
     box-shadow:
-        0 12px 30px rgba(75,66,87,.12),
+        0 12px 35px rgba(75,66,87,.12),
         inset 0 1px 0 rgba(255,255,255,.85);
 
     animation: floatCard 8s ease-in-out infinite;
-}
-
-@keyframes floatCard {
-
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-8px);
-    }
 
 }
+
+/* ---------- Footer ---------- */
 
 .footer-card {
 
-    justify-self:center;
+    margin-top: 2rem;
 
-    margin-bottom:1rem;
+    padding: .8rem 1.5rem;
 
-    padding:.75rem 1.5rem;
+    border-radius: 999px;
 
-    border-radius:999px;
+    background: rgba(255,255,255,.55);
 
-    background:rgba(255,255,255,.55);
+    border: 1px solid rgba(255,255,255,.72);
 
-    border:1px solid rgba(255,255,255,.75);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
-    backdrop-filter:blur(20px);
+    color: #8A6485;
 
-    color:#8A6485;
+    font-size: .95rem;
 
-    font-size:.9rem;
+    font-weight: 500;
 
     box-shadow:
         0 8px 20px rgba(75,66,87,.08);
+
 }
 
-.content {
+/* ---------- Animation ---------- */
 
-    display:flex;
+@keyframes floatCard {
 
-    flex-direction:column;
+    0%,100% {
 
-    justify-content:center;
+        transform: translateY(0);
 
-    align-items:center;
+    }
 
-    gap:.75rem;
+    50% {
 
-    padding:1.5rem;
+        transform: translateY(-6px);
+
+    }
+
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 1.5rem 1rem;
+
+    }
+
+    h1 {
+
+        font-size: 2.2rem;
+
+    }
+
+    #fact-container {
+
+        width: 88vw;
+
+        padding: 1.6rem;
+
+    }
 
 }
