@@ -83,6 +83,7 @@ function setupSecretLoveNote() {
 
     const card = document.getElementById("fact-container");
     const affirmation = document.getElementById("affirmation-text");
+    const header = document.getElementById("header-content");
 
     let tapCount = 0;
     let tapTimer;
@@ -106,6 +107,7 @@ function setupSecretLoveNote() {
         const note =
             loveNotes[Math.floor(Math.random() * loveNotes.length)];
 
+        header.style.display = "none";
         affirmation.style.opacity = 0;
 
         setTimeout(() => {
@@ -122,13 +124,15 @@ function setupSecretLoveNote() {
 
         }, 4750);
 
-        setTimeout(() => {
+setTimeout(() => {
 
-            affirmation.textContent = todaysAffirmation;
+    affirmation.textContent = todaysAffirmation;
 
-            affirmation.style.opacity = 1;
+    affirmation.style.opacity = 1;
 
-        }, 5000);
+    header.style.display = "";
+
+}, 5000);
 
     });
 
