@@ -1,25 +1,27 @@
 let todaysAffirmation = "";
 
+const heart = '<img src="icons/heart.png" class="heart-icon" alt="">';
+
 const loveNotes = [
-    "I love you. ❤️",
-    "I'm so proud of you. ❤️",
-    "You make life brighter. ❤️",
-    "You are my favorite person. ❤️",
-    "You make my heart happy. ❤️",
-    "Just thinking about you. ❤️",
+    `I love you. ${heart}`,
+    `I'm so proud of you. ${heart}`,
+    `You make life brighter. ${heart}`,
+    `You are my favorite person. ${heart}`,
+    `You make my heart happy. ${heart}`,
+    `Just thinking about you. ${heart}`,
     "🥒",
-    "Porter loves you. ❤️",
-    "I'm always on your side. ❤️",
-    "You mean the world to me. ❤️",
-    "Hey, beautiful. ❤️",
-    "I still have a crush on you. ❤️",
+    `Porter loves you. ${heart}`,
+    `I'm always on your side. ${heart}`,
+    `You mean the world to me. ${heart}`,
+    `Hey, beautiful. ${heart}`,
+    `I still have a crush on you. ${heart}`,
     "Hope you're having a good day.",
     "This is your reminder to smile. 😊",
     "That ass!",
-    "You've got this. ❤️",
-    "Miss you. ❤️",
-    "You've been on my mind today. ❤️",
-    "I can't wait to see you. ❤️"
+    `You've got this. ${heart}`,
+    `Miss you. ${heart}`,
+    `You've been on my mind today. ${heart}`,
+    `I can't wait to see you. ${heart}`,
 ];
 
 async function loadAffirmation() {
@@ -142,7 +144,7 @@ function setupSecretLoveNote() {
 
         setTimeout(() => {
 
-            affirmation.textContent = note;
+            affirmation.innerHTML = note;
 
             affirmation.style.opacity = 1;
 
